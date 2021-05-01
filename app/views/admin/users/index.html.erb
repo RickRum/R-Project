@@ -1,0 +1,5 @@
+<br><h1>All users</h2><br>
+<% @users.each do |user| %>
+		<p><b>User Number - </b> <%= user.id %></p>
+	  <p><b>Category -</b>  <%= user.category %></p><hr>
+<% end %>

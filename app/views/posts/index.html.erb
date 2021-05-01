@@ -1,7 +1,7 @@
 <br>
 <% @posts.each do |post| %>
-  <p>Name of post - <%= post.title %></p>
-  <p>Name of post - <%= post.body %></p>
+  <p><b>Name of post -</b> <%= post.title %></p>
+  <p><b>Name of post -</b> <%= post.body %></p>
   <%= link_to "Read more", post_path(post) %>
   <hr>
 <% end %>

@@ -10,8 +10,16 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= render "shared/header" %>
+  <body>   
+    
+    <% if controller_path =~ /^admin\// %>
+
+      <%= render "admin/shared/header" %>
+
+    <% else %>
+      <%= render "shared/header" %>
+    <% end %>
+
    <div class="container">
      <%= yield %>
     </div>

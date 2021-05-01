@@ -1,0 +1,9 @@
+<br>
+<h1>All Postes</h2><br>
+<% @posts.each do |post| %>
+  <p><b>Post number -</b> <%= post.id  %></p>
+  <p><b>Name of post -</b> <%= post.title %></p>
+  <p><b>The post -</b> <%= post.body %></p>
+  <%= link_to "Read more", admin_post_path(post) %>
+  <hr>
+<% end %>
