@@ -6,5 +6,6 @@ Rails.application.routes.draw do
 		get '/', to: 'homes#index'
 		resources :posts
 		resources :users
+		resources :categories
 	end	
 end
