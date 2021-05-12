@@ -1,0 +1,17 @@
+<br>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<table class="table table-strripted">
+				<tr>
+					<th>Email</th>
+					<th>Actions</th>
+				</tr>
+				<tr>
+					<th><%= current_user.email %></th>
+					<%= link_to "Edit", edit_profile_path(@user) , class: "btn btn-warning" %>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>

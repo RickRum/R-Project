@@ -1,4 +1,6 @@
+<h2>Edit user - <%= @user.id %> </h1>
 <%= form_for [:admin, @user] do |f| %>
-	<%= select("user",:category, Category.all.collect {|p| [ p.title, p.title ] }, { include_blank: true }) %>
-	<%= f.submit %>
+	<%= f.text_field :email , {:class => "form-control"} %><br>
+	<%= select("user",:category, Category.all.collect {|p| [ p.title, p.title ] }, { include_blank: true }) %><br>
+	<br><%= f.submit %>
 <% end %> 

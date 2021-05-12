@@ -1,7 +1,7 @@
 
 <br><h1>All users</h2><br>
-<% @users.each do |user| %>
-		<p><b>User Number - </b> <%= user.id %></p>
-	  <p><b>Category -</b>  <%= user.category %></p>
-	<%= link_to "Edit User" , edit_admin_user_path(user) , class: "btn btn-info"%><hr>
-<% end %>
+<table class="table table-stritp"><% @users.each do |user| %>
+		<tr><td><b>User Number - </b> <%= user.id %></td>
+	  <td><b>Category -</b>  <%= user.category %></td>
+	<td><%= link_to "Edit User" , edit_admin_user_path(user) , class: "btn btn-info"%></td></tr>
+<% end %></table>

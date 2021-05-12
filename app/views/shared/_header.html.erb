@@ -24,6 +24,11 @@
          <%= link_to "Registration" ,  new_user_registration_path , {:class => "p-3"}%>
         </li>
         <% end %>
+
+		  <% if current_user.category == "admin" %>
+          <%= link_to "ADMIN" , admin_posts_path %>
+        <% end %>
+       
       </ul>
     </div>
   </div>
