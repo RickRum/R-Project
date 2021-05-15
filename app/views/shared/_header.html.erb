@@ -25,10 +25,14 @@
         </li>
         <% end %>
 
-		  <% if current_user.category == "admin" %>
-          <%= link_to "ADMIN" , admin_posts_path %>
+        <% if current_user && current_user.category == "admin" %>
+          <li class="nav-item"><%= link_to "ADMIN" , admin_posts_path , class: "m-3 btn-sm btn-outline-warning"%></li>
         <% end %>
        
+			<li class="nav-item">
+		 	    <%= link_to "Profile" , users_path %>
+        </li>
+
       </ul>
     </div>
   </div>

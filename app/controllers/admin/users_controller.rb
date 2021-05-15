@@ -17,7 +17,14 @@ class Admin::UsersController < ApplicationController
 		redirect_to admin_user_path(@user)
 	end
 
+	def destroy
+		@user = User.find(params[:id])
+		if @user.destroy
+			redirect_to admin_users_path
+		end
+	end
+
 	private def user_params
-		params.require(:user).permit(:category)
+		params.require(:user).permit(:category , :userName)
 	end
 end
