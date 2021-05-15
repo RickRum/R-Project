@@ -1,7 +1,18 @@
-
 <br><h1>All users</h2><br>
-<% @users.each do |user| %>
-		<p><b>User Number - </b> <%= user.id %></p>
-	  <p><b>Category -</b>  <%= user.category %></p>
-	<%= link_to "Edit User" , edit_admin_user_path(user) , class: "btn btn-info"%><hr>
-<% end %>
+<table class="table table-striped">
+	<thead class="thead-dark">
+    <tr>
+      <th scope="col">№</th>
+      <th scope="col">Name</th>
+      <th scope="col">Category</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Delete</th>
+    </tr>
+   <% @users.each do |user| %>
+  </thead>
+		<tr><td><b>User Number - </b> <%= user.id %></td>
+		<td><b>User Name - </b> <%= user.userName %>
+	  <td><b>Category -</b>  <%= user.category %></td>
+	<td><%= link_to "Edit User" , edit_admin_user_path(user) , class: "btn btn-info"%></td>
+	<td><%= link_to "Delete",[:admin, user], data: {method: :delete, confirm: 'Are you sure?'} , class: "btn btn-danger" %> </td></tr>
+<% end %></table>

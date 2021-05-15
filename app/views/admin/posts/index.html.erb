@@ -1,7 +1,8 @@
-<br>
+<br><%= link_to "Create new posts" , new_admin_post_path  , {:class => "btn btn-outline-warning float-right"}%>
+<br><h1>Interesting posts</h1><br>
 <% @posts.each do |post| %>
   <p>Name of post - <%= post.title %></p>
   <p>Name of post - <%= post.body %></p>
-  <%= link_to "Read more", admin_post_path(post) %>
+  <%= link_to "Read more", admin_post_path(post) , {:class => "btn btn-outline-success"}%>
   <hr>
 <% end %>

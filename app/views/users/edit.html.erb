@@ -1,0 +1,6 @@
+<h2>Edit Info</h1>
+<%= form_for @user do |f| %>
+	<%= f.text_field :email , {:class => "form-control"} %><br>
+	<%= f.text_field :userName , {:class => "form-control"} %>
+	<br><%= f.submit %>
+<% end %>

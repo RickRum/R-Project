@@ -14,6 +14,6 @@ class Admin::CategoriesController < ApplicationController
 	end
 
 	private def category_params
-		params.require(:category).permit(:title)
+		params.require(:category).permit(:title , :userName)
 	end
 end
