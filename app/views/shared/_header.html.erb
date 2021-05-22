@@ -15,6 +15,11 @@
           <li class="nav-item">
             <%= link_to "Log out" , destroy_user_session_path , method: :delete %>
           </li>
+
+       <li class="nav-item">
+          <%= link_to "Profile" , users_path , {:class => "p-3"} %>
+        </li>
+
         <% else %> 
         <li class="nav-item">
             <%= link_to "Sign In" , new_user_session_path  %>
@@ -26,12 +31,8 @@
         <% end %>
 
         <% if current_user && current_user.category == "admin" %>
-          <li class="nav-item"><%= link_to "ADMIN" , admin_posts_path , class: "m-3 btn-sm btn-outline-warning"%></li>
+          <li class="nav-item"><%= link_to "ADMIN" , admin_posts_path , class: " btn-sm btn-outline-warning"%></li>
         <% end %>
-       
-			<li class="nav-item">
-		 	    <%= link_to "Profile" , users_path %>
-        </li>
 
       </ul>
     </div>

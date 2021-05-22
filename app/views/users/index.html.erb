@@ -12,6 +12,13 @@
 				<tr class="d-flex mx-auto justify-content-center">
 					<td><%= current_user.userName %></td>
 				</tr>
+				<tr class="d-flex mx-auto justify-content-center">
+					<% if current_user.image.present? %>
+						<td><%= image_tag current_user.image %></td>
+					<% else %>
+						<td><img src="/user.png"></td>
+					<% end %>	
+				</tr>
 				<tr>
 					<td class="d-flex mx-auto justify-content-center"><%= link_to "Edit" , edit_user_path(@user) , class: "btn btn-warning m-2" %>
 					<%= link_to "Delete" , @user , data: {method: :delete, confirm: 'Are you sure?'} , class: "btn btn-danger m-2" %></td>
