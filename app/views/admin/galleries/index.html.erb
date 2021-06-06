@@ -1,0 +1,5 @@
+<br><%= link_to "add new image" , new_admin_gallery_path  , {:class => "btn btn-outline-warning float-right"}%>
+<br><h1>Interesting posts</h1><br>
+<% @galleries.each do |g| %>
+   <%= image_tag g.images %>
+<% end %>

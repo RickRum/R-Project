@@ -3,6 +3,14 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
+<div class="image-upload">
+  <label for="file-input">
+    <img src="/user.png" style="width: 150px; border-radius: 100%;" />
+  		<input id="file-input" type="file" style="display: none;" />
+  </label>
+
+</div>
+
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" , class: "form-control" %>
@@ -12,6 +20,8 @@
     <%= f.label :userName %><br />
     <%= f.text_field :userName , class: "form-control" %>
   </div>
+
+
 
   <div class="field">
     <%= f.label :password %>
