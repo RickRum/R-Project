@@ -2,5 +2,6 @@
 <%= form_for @user do |f| %>
 	<%= f.text_field :email , {:class => "form-control"} %><br>
 	<%= f.text_field :userName , {:class => "form-control"} %>
+	<%= f.file_field :image %>
 	<br><%= f.submit %>
 <% end %>

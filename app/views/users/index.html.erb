@@ -1,7 +1,7 @@
 <br>
 <div class="container-fluid">
 	<div class="row">
-		<div class="col-md-4 mx-auto justify-content-center">
+		<div class="col-md-6 mx-auto justify-content-center">
 			<table class="table table-striped border ">
 				<tr class="d-flex mx-auto justify-content-center">
 					<th scope="col">Info about you</th>
@@ -16,8 +16,8 @@
 					<% if current_user.image.present? %>
 						<td><%= image_tag current_user.image %></td>
 					<% else %>
-						<td><img src="/user.png"></td>
-					<% end %>	
+						<td><img src="/user.png" , ></td>
+					<% end %>
 				</tr>
 				<tr>
 					<td class="d-flex mx-auto justify-content-center"><%= link_to "Edit" , edit_user_path(@user) , class: "btn btn-warning m-2" %>

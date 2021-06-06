@@ -1,0 +1,7 @@
+<br><%= link_to "add new image" , new_admin_photo_path  , {:class => "btn btn-outline-warning float-right"}%>
+<br><h1>Photos</h1><br>
+<% @photos.each do |g| %>
+    <%= image_tag g.images %>
+	<%= g.userName %></br>
+<% end %>
+</br>

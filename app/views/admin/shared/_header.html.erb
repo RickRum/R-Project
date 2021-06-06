@@ -30,7 +30,11 @@
          </li>
 
 			<li class="nav-item">
-		 	    <%= link_to "Profile" , users_path %>
+		 	    <%= link_to "Profile" , users_path , {:class => "p-3"} %>
+        </li>
+
+       <li class="nav-item">
+          <%= link_to "Photos" , admin_imgalleries_path %>
         </li>
 
       </ul>

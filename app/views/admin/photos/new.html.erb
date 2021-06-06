@@ -1,0 +1,6 @@
+<br><h2>Creating Post</h2><br>
+<%= form_for [:admin,@photo] do |f| %>
+   <%= f.file_field :images %><br>
+   <%= f.text_field :userName,  value:current_user.userName , readonly: true %><br>
+   <%= f.submit class: "btn btn-warning" %>
+<% end %>

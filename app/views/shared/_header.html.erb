@@ -31,8 +31,12 @@
         <% end %>
 
         <% if current_user && current_user.category == "admin" %>
-          <li class="nav-item"><%= link_to "ADMIN" , admin_posts_path , class: " btn-sm btn-outline-warning"%></li>
+          <li class="nav-item"><%= link_to "ADMIN" , admin_posts_path , class: " btn-sm btn-outline-warning p-3"%></li>
         <% end %>
+
+        <li class="nav-item">
+          <%= link_to "Photos" , admin_imgalleries_path %>
+        </li>
 
       </ul>
     </div>

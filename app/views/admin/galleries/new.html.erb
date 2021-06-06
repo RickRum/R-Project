@@ -1,0 +1,5 @@
+<br><h2>Creating Post</h2><br>
+<%= form_for @gallery do |f| %>
+   <%= f.file_field :images %><br>
+   <%= f.submit class: "btn btn-warning"%>
+<% end %>
