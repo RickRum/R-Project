@@ -21,5 +21,5 @@ end
 # 		password: Faker::Number.number(digits: 10),
 # 		password_confirmation: Faker::Number.number(digits: 10),
 # 		)
-# 	puts "Fake user [#{email.title}]"
+# 	puts "Fake user [#{user.email}]"
 # end

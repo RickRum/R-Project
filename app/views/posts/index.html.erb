@@ -1,7 +1,9 @@
 <br><h1>Interesting Posts</h1><br>
 <% @posts.each do |post| %>
+  <p><b>Id of post -</b> <%= post.id %></p>
   <p><b>Name of post -</b> <%= post.title %></p>
-  <p><b>Name of post -</b> <%= post.body %></p>
+  <p><b>Content of post -</b> <%= post.body %></p>
   <%= link_to "Read more", post_path(post) , {:class => "btn btn-outline-info"}%>
   <hr>
 <% end %>
+<div style="margin: 0 auto; justify-content: center; "><%= paginate @posts %></div>
