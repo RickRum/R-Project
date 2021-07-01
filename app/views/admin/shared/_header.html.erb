@@ -1,43 +1,23 @@
-<nav class="navbar navbar-expand-lg navbar-dark p-4 bg-secondary ">
-  <div class="container-fluid d-f d-flex justify-content-around">
-    <a class="navbar-brand font-weight-bold" href="#"><%= link_to "Admin Rails App" , admin_path  , {:class => "text-light font-weight-bold"} %></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse " id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Myrails</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
 
-        <li class="nav-item">
-		 	    <%= link_to "Main" , home_path , {:class => "p-3"} %>
-        </li>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  </head>
 
-        <% if current_user %>
-          <li class="nav-item">
-            <%= link_to "Log out" , destroy_user_session_path , method: :delete %>
-          </li>
-        <% else %> 
-        <li class="nav-item">
-            <%= link_to "Sign In" , new_user_session_path  %>
-        </li>
-        
-        <li class="nav-item">
-         <%= link_to "Registration" ,  new_user_registration_path , {:class => "p-3"}%>
-        </li>
-        <% end %>
+  <body>
+   <% if controller_path =~ /^admin\// %>
 
-         <li class="nav-item">
-            <%= link_to "User" ,  admin_users_path , {:class => "p-3"} %>
-         </li>
+      <%= render "admin/shared/header" %>
 
-			<li class="nav-item">
-		 	    <%= link_to "Profile" , users_path , {:class => "p-3"} %>
-        </li>
+    <% else %>
+      <%= render "shared/header" %>
+    <% end %>
 
-       <li class="nav-item">
-          <%= link_to "Photos" , admin_imgalleries_path %>
-        </li>
-
-      </ul>
-    </div>
-  </div>
-</nav>
+    <div class="container"><%= yield %></div>
+  </body>
+</html>

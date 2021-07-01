@@ -1,4 +1,24 @@
 <br>
 <h5><b>Title -</b> <%= @post.title %></p>
 <h5><b>Post -</b> <%= @post.body %></p><br>
-<hr><br>
+<hr>
+
+<% @post.comments.each do |com| %>
+  <b style="font-size: 18px;"><%= com.userName %>:</b><span style="font-size: 15px;"> <%= com.body %></span><br>
+<% end %>
+
+<br><h2>Comments</h2>
+
+<% if current_user %>
+	<%= form_for([@post, Comment.new]) do |f| %>
+		<br><%= f.text_area :body , class: 'form-control' %><br>
+		<%= f.submit class: "btn btn-warning"%>
+	<% end %> 
+
+<% else %>
+
+<%= form_for([@post, Comment.new]) do |f| %>
+	<br><%= f.text_area :body , class: 'form-control' , id: "disabledTextInput" %><br>
+<% end %> 
+
+<% end %>
